@@ -1,0 +1,15 @@
+.container {
+    width:100%;
+    text-align:left;
+    background-color: #06090e;
+    height: 54px;
+    display: flex;
+}
+
+.text {
+font-family: 'Open Sans', sans-serif;
+color:white;
+margin-left:10px;
+line-height:50px;
+font-size:18px;
+}

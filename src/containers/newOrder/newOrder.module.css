@@ -1,0 +1,21 @@
+.title { color:white;
+font-size:35px;
+text-align: left;
+margin-bottom:70px;
+margin-left:10px;}
+.container{
+    margin-left:200px;
+}
+
+.flex {
+    width:80%;
+    display: flex;
+   margin:0 auto;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.vr {
+    border-left: 1px solid #10141c;
+    height:800px;
+}

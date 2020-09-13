@@ -1,0 +1,103 @@
+.add__items {
+    border-radius: 5px;
+    border: 1px solid #1f242d ;
+    background-color:#06090e;
+    height:763px;
+    width:443px;
+
+}
+.header {
+    font-family: 'Open Sans', sans-serif;    
+    color:#46e1b6;
+    font-size:22px;
+    padding:40px 0px 40px 0;
+}
+.list__container {
+    margin-left:10%;
+    position: relative;
+
+}
+
+
+.search input{
+font-family: 'Open Sans', sans-serif;   
+background-color:transparent;
+outline:none;
+border:none;
+padding-top:10px;
+padding-bottom:10px;
+font-size:14px;
+border-bottom:1px solid #626e7e;
+color:#626e7e;
+width:98%;
+}
+
+.items_list{
+    overflow-y:scroll;
+    text-align: left;
+    height:610px;
+}
+
+.item{
+    display:flex;
+    color:white;
+    margin-top:20px;
+    width:98%;
+    border-bottom:1px solid #626373;
+    padding-bottom:10px;
+    justify-content: space-between;
+}
+.item input {
+    width:14px;
+    height:14px;
+    border-radius:2px;
+    color:#8393a8;
+}
+
+.item input:checked + label {
+color:white;
+
+}
+
+
+.item label {
+    padding-left: 10px;
+    font-size:14px;
+    color:#8393a8
+}
+
+
+.item .price {
+text-align: center;
+width:50%;
+font-size:14px;
+color:#46e1b6;
+
+}
+
+.add {
+    width:443px;
+    height:82px;
+    position: absolute;;
+    display: block;
+    background-color:#06090e;
+    border-top:1px solid #1f242d;
+    bottom:-4px;
+    right:0;
+    
+}
+
+.add button {
+    margin-top:15px;
+    outline:none;
+    border:1px solid #46e1b6;
+    font-size:14px;
+    width:177px;
+    height:45px;
+    border-radius: 5px;
+    background-color:transparent;
+    font-size:14px;
+    color:#46e1b6;
+    font-weight: bold;
+    line-height:19px;
+}
