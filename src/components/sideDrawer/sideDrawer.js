@@ -8,10 +8,10 @@ const sideDrawer = () => {
         <Auxiliary>
         <div className={classes.side__drawer}>
         <div>
-          <NavLink to="/">  Orders</NavLink>
+          <NavLink activeClassName={classes.active}to="/Orders">  Orders</NavLink>
         </div>
         <div>
-        <NavLink to="/neworder">    New Order </NavLink>
+        <NavLink activeClassName={classes.active} to="/neworder"> New Order </NavLink>
         </div>
 
         </div>

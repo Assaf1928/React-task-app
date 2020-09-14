@@ -2,10 +2,14 @@ import React from 'react';
 import classes from './addItems.module.css'
 const addItems = (props) => {
   let items = ''
+  console.log(props.searchValue)
     if(props.items != null) {
-     items = props.items.map((element,index) => {
-        return (
-            
+        items = props.items;
+        items = items.map((element,index) =>  {
+         console.log(items)
+       if(element.name.includes(props.searchValue)) {
+         return (
+
         <div  key={index} className={classes.item}>
         <div>
         <input  value={element.name} data-tag={element.price} data-index={index} onChange={(e)=> props.addCheckItem(e)} type="checkbox"/> 
@@ -16,7 +20,9 @@ const addItems = (props) => {
             {element.price}
         </div>
     </div>
-    )});
+    )}
+            else return '';
+});
         }
     return (
         <div className={classes.add__items}>
@@ -26,7 +32,7 @@ const addItems = (props) => {
         <div className={classes.list__container}>
         <div className={classes.search}>
 
-            <input type="text" placeholder="Search..."/>
+            <input onChange={(e) => props.onChangeSearchInput(e)} type="text" placeholder="Search..."/>
         </div>
         <div className={classes.items_list}>
         {items}

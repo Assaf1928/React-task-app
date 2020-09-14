@@ -6,7 +6,7 @@ export const addOrder = (items,totalprice) => {
         type: actionTypes.ADD_ORDER,
         items,
         totalprice,
-        orderdate: new Date().toString()
+        orderdate: new Date().toLocaleDateString()
     };
     
 }

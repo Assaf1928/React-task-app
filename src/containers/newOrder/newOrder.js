@@ -4,26 +4,26 @@ import classes from './newOrder.module.css';
 import AddItems from '../../components/addItems/addItems'
 import Chart from '../../components/chart/chart';
 import * as actions from '../../store/actions/index'
-import { browserHistory } from 'react-router'
 
 class newOrder extends Component {
 
     state = {
       check_items: [],
+      search_input: '',
       total_price:0,
       items: [
         {name: 'Apple', price:5},
-        {name: 'Grapes', price:10},        {name: 'Grapes', price:10},
+        {name: 'Grapes', price:10},       
+         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
-
         {name: 'Tomatoes', price:12},
-        {name: 'Lemon', price:5},        {name: 'Grapes', price:10},
+        {name: 'Lemon', price:5},
+         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
         {name: 'Grapes', price:10},
-
         {name: 'Pear', price:5},
         {name: 'Apple', price:5},
         {name: 'Apple', price:5},
@@ -32,6 +32,22 @@ class newOrder extends Component {
 
     ]
     }
+
+    onChangeSearchInput = (event) => {
+      this.setState({
+        search_input: event.target.value
+      })
+    }
+    
+    onPlaceOrder = (items,totalPrice) => {
+      if(this.state.check_items.length === 0) {
+          alert("choose items before ordering");
+          return;
+        }
+      this.props.onOrderAdd(items,totalPrice)
+      this.props.history.push("/Orders");
+    }
+
     addItemToCheckedItems = (event) => {
       let checked = true;
      let  updatedCheckedItems = this.state.check_items
@@ -65,9 +81,9 @@ class newOrder extends Component {
     <div className={classes.title}>  New Order </div>
 
             <div className={classes.flex}>
-            <AddItems checkedItems={this.state.check_items} addCheckItem={(event) => this.addItemToCheckedItems(event)} items={this.state.items}/>
+            <AddItems searchValue={this.state.search_input} onChangeSearchInput={(event) => this.onChangeSearchInput(event)} checkedItems={this.state.check_items} addCheckItem={(event) => this.addItemToCheckedItems(event)} items={this.state.items}/>
             <div className={classes.vr}></div>
-            <Chart onOrderAdd={this.props.onOrderAdd} totalPrice={this.state.total_price} checkedItems={this.state.check_items} />
+            <Chart onOrderAdd={this.onPlaceOrder} totalPrice={this.state.total_price} checkedItems={this.state.check_items} />
 
         </div>
     </div>

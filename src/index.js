@@ -33,7 +33,7 @@ ReactDOM.render(
     <Layout>   
     <Switch>
     <Route  path="/newOrder" component={NewOrder} />
-  <Route path="/" component={Orders} />
+  <Route path="/Orders" component={Orders} />
 </Switch>
     </Layout>
     </BrowserRouter>
