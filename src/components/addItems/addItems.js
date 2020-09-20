@@ -39,7 +39,7 @@ const addItems = (props) => {
           
         </div>
         <div className={classes.add}>
-        <button>
+        <button type="button" onClick={props.onAddChartClick}>
                   + Add to chart</button>
         </div>
         </div>

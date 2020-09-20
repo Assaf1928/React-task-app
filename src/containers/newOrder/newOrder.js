@@ -8,6 +8,7 @@ import * as actions from '../../store/actions/index'
 class newOrder extends Component {
 
     state = {
+      chart_display: false,
       check_items: [],
       search_input: '',
       total_price:0,
@@ -32,7 +33,12 @@ class newOrder extends Component {
 
     ]
     }
-
+    onAddChartClick = () => {
+      this.setState({
+        ...this.state,
+        chart_display: true})
+      console.log(this.state.chart_display);
+    }
     onChangeSearchInput = (event) => {
       this.setState({
         search_input: event.target.value
@@ -81,9 +87,9 @@ class newOrder extends Component {
     <div className={classes.title}>  New Order </div>
 
             <div className={classes.flex}>
-            <AddItems searchValue={this.state.search_input} onChangeSearchInput={(event) => this.onChangeSearchInput(event)} checkedItems={this.state.check_items} addCheckItem={(event) => this.addItemToCheckedItems(event)} items={this.state.items}/>
+            <AddItems onAddChartClick={() =>this.onAddChartClick()} searchValue={this.state.search_input} onChangeSearchInput={(event) => this.onChangeSearchInput(event)} checkedItems={this.state.check_items} addCheckItem={(event) => this.addItemToCheckedItems(event)} items={this.state.items}/>
             <div className={classes.vr}></div>
-            <Chart onOrderAdd={this.onPlaceOrder} totalPrice={this.state.total_price} checkedItems={this.state.check_items} />
+            <Chart display={this.state.chart_display} onOrderAdd={this.onPlaceOrder} totalPrice={this.state.total_price} checkedItems={this.state.check_items} />
 
         </div>
     </div>

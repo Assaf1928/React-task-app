@@ -12,24 +12,25 @@ class Orders extends Component {
         if(this.props.orders != '')
         {
             data = this.props.orders.map((element,index) => {
-            
                 return (
+                    
                     <div key={index} className={classes.orders_container}>
                     <div className={classes.order}>
                         <div className={classes.header}>
-                            Order Number {index + 1} <span>({element.items.length} Items)</span>
+                            Order Number  {index + 1} <span>({element.items.length} Items)</span>
                             <p className={classes.date}>{element.orderdate}</p>
                         </div>
                         <div className={classes.items_list}>
                             {element.items.map((item,index)=> {
-                                return ( <div className={classes.item}>
+                                return ( <div key={index} className={classes.item}>
                                  <div className={classes.text}>{item.name}</div>
-                                 <div className={classes.price}>{item.price}</div>
+                                 <div className={classes.price}>{item.price}$</div>
                              </div> )
                             })}
                         
                         </div>
-                        <div className={classes.total_cost}><p>Total Cost: <span>{element.totalprice}</span></p></div>
+                        
+                        <div className={classes.total_cost}><p>Total Cost: <span>{element.totalprice}$</span></p></div>
                     </div>
     
                     </div>

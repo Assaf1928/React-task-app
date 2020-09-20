@@ -22,7 +22,7 @@ const chart = (props) => {
             </div>
 
             <div className={classes.flex_column}>
-               {checked}
+               { props.display ? checked : ''}
         
             </div>
 
@@ -30,7 +30,7 @@ const chart = (props) => {
 
             </div>
             <div className={classes.total__price}>
-                Total Cost: <span>{props.totalPrice}</span>
+                Total Cost: <span>{props.display ? props.totalPrice : '0'}$</span>
             </div>
 
             <div className={classes.place__order}>

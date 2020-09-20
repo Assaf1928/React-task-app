@@ -19,7 +19,7 @@ const reducer = (state = initialState, action) =>
     switch(action.type)  {
        case actionTypes.FETCH_ORDERS: return fetchOrders(state,action);
        case actionTypes.ADD_ORDER: { 
-        const order = {items:action.items, totalprice: action.totalprice,orderdate: action.orderdate};   
+        const order = {items:action.items, totalprice: action.totalprice,orderdate: action.orderdate, accordion: false};   
        const newState = state.orders.push(order)
         return {...state,
                 
