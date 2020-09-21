@@ -15,19 +15,26 @@
 
     .order {
      width: 634px;
-    height:371px;
-    background-color:#06090e;
-    border:1px solid #1f242d;
     position: relative;
-    margin-top:20px;
-    }
+    margin-top:20px; 
+    
 
+    }
+    .body {
+        background-color:#06090e;
+
+    }
     .header {
+        width: 634px;
+         background-color:#06090e;
+        border:1px solid #1f242d;
         color:white;
         font-size:22px;
         font-weight: bold;
-        margin-left:20px;
         border-bottom:1px solid #1f242d;
+    }
+    .header p {
+        margin-left:20px;
     }
     .header span {
         color:#1f242d;
@@ -38,10 +45,11 @@
     }
 
     .items_list {
+        overflow-y:scroll;
         display: flex;
         flex-direction: column;
-        overflow-y:scroll;
         max-height:200px;
+        margin-bottom:70px;
     }
     
     .items_list .item {
@@ -72,6 +80,7 @@
         font-size:22px;
         background-color:
         #1f242d;
+        
         height:69px;
         width:100%;
         position: absolute;

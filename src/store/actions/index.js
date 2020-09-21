@@ -1,5 +1,6 @@
 export {
     fetchOrders,
-    addOrder
+    addOrder,
+    onAccordionChange
     }
     from './orders'

@@ -10,7 +10,12 @@ export const addOrder = (items,totalprice) => {
     };
     
 }
-
+export const onAccordionChange = (order) => {
+    return {    
+        type: actionTypes.ACCORDION_UPDATE,
+        order: order 
+    }
+}
 
 export const fetchOrders = (orders) => {
     return {
